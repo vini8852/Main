@@ -1,0 +1,10 @@
+<div class="level-container">
+  Level - {{level}}
+</div>
+<div class="main-container">
+  <div class="square-container">
+    <div class="square" *ngFor="let square of squares;let i=index" [style.background]="square==-1?'white':colorArray[square]" (click)="changeColorOfSquare(i)" [style.cursor]="playMode?'default':'pointer'"></div>
+  </div>
+  <button class="control-button" (click)="playSequence()" *ngIf="gameMode==1">Play</button>
+  <button class="control-button" (click)="checkPattern()" *ngIf="gameMode==0">Check Pattern</button>
+</div>
